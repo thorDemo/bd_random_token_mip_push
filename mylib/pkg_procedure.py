@@ -3,6 +3,7 @@ import requests
 from requests.exceptions import ConnectionError
 from datetime import datetime
 from random import choice, randint
+from json.decoder import JSONDecodeError
 
 all_site = PushTool.get_all_site()
 
@@ -31,4 +32,5 @@ def send_pkg_url(thread_num):
 
         except ConnectionError:
             print('服务器断开连接。。。')
-
+        except JSONDecodeError:
+            print('服务器未返回正确数据。。')
