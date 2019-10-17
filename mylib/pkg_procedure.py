@@ -1,6 +1,6 @@
 from tools.push_tools import PushTool
 import requests
-from urllib import parse
+from requests.exceptions import ConnectionError
 from datetime import datetime
 from random import choice, randint
 
