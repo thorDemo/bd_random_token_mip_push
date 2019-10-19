@@ -11,16 +11,16 @@ import os
 
 class PushTool:
 
-    @staticmethod
-    def get_all_site():
-        all_site = []
-        for parent, dir_names, filename in os.walk('domain'):
-            for name in filename:
-                file_path = os.path.join(parent, name)
-                file = open(file_path, 'r', encoding='utf-8')
-                for line in file:
-                    all_site.append(line.strip('\n'))
-        return all_site
+    # @staticmethod
+    # def get_all_site():
+    #     all_site = []
+    #     for parent, dir_names, filename in os.walk('static'):
+    #         for name in filename:
+    #             file_path = os.path.join(parent, name)
+    #             file = open(file_path, 'r', encoding='utf-8')
+    #             for line in file:
+    #                 all_site.append(line.strip('\n'))
+    #     return all_site
 
     @staticmethod
     def get_proxy():
