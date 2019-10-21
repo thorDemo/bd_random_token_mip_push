@@ -29,6 +29,7 @@ def delete_all_site(site, cookie):
             'page': 1,
             'pagesize': 100,
         }
+        response = object
         try:
             response = requests.get(
                 url='https://ziyuan.baidu.com/site/getsite',
@@ -60,7 +61,11 @@ def delete_all_site(site, cookie):
                 #     else:
                 #         print(line['id'], line['url'], '删除失败')
         except ConnectionError:
-            print('断开')
+            # print('断开')
+            pass
+        except JSONDecodeError:
+            print(response.content)
+            pass
 
 
 def delete_one_site(site_id, cookie):
